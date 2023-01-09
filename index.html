@@ -15,8 +15,8 @@
 <body>
 	<div style="margin-top: 20px;">
 
-		<input type="radio" name="radio" id="radio" value="1">decode
-		<input type="radio" name="radio" id="radio" value="2">encode
+		<input type="radio" name="radio" id="radio1" value="1">decode
+		<input type="radio" name="radio" id="radio2" value="2">encode
 		<br><br>
 		<textarea placeholder="Input here" name="input" id="input" style="width: 100%; min-height: 200px; overflow-y: scroll">asd</textarea>
 
@@ -34,12 +34,29 @@
 
 	function convert() {
 
-		let r = document.getElementById('radio').value;
+		let r1 = document.getElementById('radio1').checked;
+		let r2 = document.getElementById('radio2').checked;
 
-		let a = document.getElementById('input').value
-		let result = document.getElementById('result');
+		console.log("r1", r1)
+		console.log("r2", r2)
 
-		let encode = btoa(a);
-		result.innerHTML += r;
+
+		if(r1) {
+			let a = document.getElementById('input').value
+			let result = document.getElementById('result');
+			result.innerHTML = "";
+
+			let encode = btoa(a);
+			result.innerHTML += encode;
+		} else {
+			let a = document.getElementById('input').value
+			let result = document.getElementById('result');
+			result.innerHTML = "";
+
+			let encode = atob(a);
+			result.innerHTML += encode;
+		}
+
+		
 	}
 </script>
