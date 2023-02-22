@@ -1,1 +1,7 @@
-index.css
+*{
+    opacity: 1;
+}
+
+body {
+    width: 100%;
+}
